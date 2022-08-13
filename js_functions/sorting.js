@@ -1,4 +1,4 @@
-// swap function util for sorting algorithms takes input of 2 DOM elements with .style.height feature
+
 function swap(el1, el2) {
     console.log('In swap()');
     
@@ -8,7 +8,6 @@ function swap(el1, el2) {
     
 }
 
-// Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableSortingBtn(){
     document.querySelector(".bubbleSort").disabled = true;
     document.querySelector(".insertionSort").disabled = true;
@@ -17,7 +16,6 @@ function disableSortingBtn(){
     document.querySelector(".selectionSort").disabled = true;
 }
 
-// Enables sorting buttons used in conjunction with disable
 function enableSortingBtn(){
     document.querySelector(".bubbleSort").disabled = false;
     document.querySelector(".insertionSort").disabled = false;
@@ -26,22 +24,18 @@ function enableSortingBtn(){
     document.querySelector(".selectionSort").disabled = false;
 }
 
-// Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableSizeSlider(){
     document.querySelector("#arr_sz").disabled = true;
 }
 
-// Enables size slider used in conjunction with disable
 function enableSizeSlider(){
     document.querySelector("#arr_sz").disabled = false;
 }
 
-// Disables newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableNewArrayBtn(){
     document.querySelector(".newArray").disabled = true;
 }
 
-// Enables newArray buttons used in conjunction with disable
 function enableNewArrayBtn(){
     document.querySelector(".newArray").disabled = false;
 }
@@ -74,7 +68,7 @@ delayElement.addEventListener('input', function(){
     delay = 320 - parseInt(delayElement.value);
 });
 
-// Creating array to store randomly generated numbers
+
 let array = [];
 
 // Call to display bars right when you visit the site
