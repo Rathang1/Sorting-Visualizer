@@ -1,0 +1,89 @@
+Flex is used to change direction of flex items, by default it is row
+
+The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned. 
+
+setTimeout -> takes in a callback function and delays it by that time
+
+Used to deal with asynchronus data
+
+Async - In ES 7 to elegently handle promises - 
+Await - In ES 7 to elegently handle promises - 
+
+They make everything too simple
+
+async function init() {
+    await createPost({ title: 'Post 3', body: 'This is 3', getPosts});
+    getPosts();
+}
+
+init();
+
+Callback - if we don't want to wait for data that is coming, so that code can keep running
+         - If DOM is loaded and objects come later how to deal with that
+         - It is basically a function that we want to call automatically after a function is completely processes
+         - This helps in calling the objects to render right after we have all the data
+
+Eg - 
+
+    function getPosts(){
+        let output = '';
+        posts.forEach((post,index) => {
+            output += `<li>${post.title}</li>`;
+        });
+    }
+
+    function createPost(post, callback) {
+        setTimeout(() => {
+            posts.push(post);
+            callback();
+        },2000);
+    }
+    
+    createPost(} title: 'Post 3', body: 'This is 3', getPosts);
+    In the example above as we passed the function as a callback, it waited to add all items to the list and then rendered it.
+
+
+Promises - In ES6 we got promises
+
+    function createPost(post) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                posts.push(post);
+
+                const error = false;
+
+                if(!error){
+                    resolve();
+                }
+                else{
+                    reject('Error: Something is wrong');
+                }
+            },2000);
+        });
+    }
+
+    createPost(} title: 'Post 3', body: 'This is 3').then(getPosts).catch(err => console.log(err));
+
+    In this case as resolve is returned then getPosts is called
+
+    if we have too many proimses we can use promise.all
+
+    const promise1 = Promise.resolve('Hello World');
+    const promise2 = 10;
+    const promise3 = new Promise((resolve, reject) => 
+    setTimeout(resolve,2000,'GoodBye');
+    );
+
+    Promise.all([promise1,promise2,promise3]).then(values => console.log(values));
+
+quick sort - uses divide and conquer, it finds the position of pivot element every time and then places it in its position.
+In the next iteration it finds the pivot of the left and right part of the pivot until only a single element is left, it keeps dividing the array. - time - nlogn best case, n^2 worst space - log n 
+
+selection sort - min element is found in every iteration and put on the root index - n^2 time and 1 space
+
+bubble sort - adjacent elements are checked and the largest one is sent to the right, end index gets the correct/ largest value in each iteration - time - n^2 space - 1
+
+merge sort - mid element is calculated and left and right halvs are sorted individually then combined using 2 pointers - time - nlogn space - n
+
+insertion sort - we find the position of the next element in our sorted left half and insert the element - time - n^2 space - 1
+
